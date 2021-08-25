@@ -36,6 +36,34 @@ void ex2() {
 	}
 }
 
+void ex3() {
+	int a[5][3];
+	int count = 0;
+	//외부 변수 count를 이용한 방법
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (count % 2 == 0)
+				a[i][j] = 0;
+			else
+				a[i][j] = 1;
+			count++;
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	//i와 j를 이용한 방법
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 3; j++) {
+			if ((i+j) % 2 == 0)
+				a[i][j] = 0;
+			else
+				a[i][j] = 1;
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+
+}
 
 int main(void) {
 	int exnum;
@@ -49,6 +77,9 @@ int main(void) {
 		break;
 	case 2:
 		ex2();
+		break;
+	case 3:
+		ex3();
 		break;
 	}
 }
