@@ -40,7 +40,7 @@ void ex3() {
 	int a[5][3];
 	int count = 0;
 	//외부 변수 count를 이용한 방법
-	for (int i = 0; i < 5; i++) {
+	/*for (int i = 0; i < 5; i++) {
 		for (int j = 0; j < 3; j++) {
 			if (count % 2 == 0)
 				a[i][j] = 0;
@@ -50,10 +50,10 @@ void ex3() {
 			printf("%d ", a[i][j]);
 		}
 		printf("\n");
-	}
+	}*/
 	//i와 j를 이용한 방법
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 3; j++) {
+	for (int i = 0; i < sizeof(a)/sizeof(a[0]); i++) {
+		for (int j = 0; j < sizeof(a[0])/sizeof(a[0][0]); j++) {
 			if ((i+j) % 2 == 0)
 				a[i][j] = 0;
 			else
